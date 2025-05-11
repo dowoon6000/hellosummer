@@ -1,4 +1,243 @@
+:root {
+  --main-color: #ffffff;
+  --accent-color: #d0a155;
+  --text-color: rgb(0, 0, 0);
+  --font-size: 1rem;
+  --form-font-size: 0.6rem;     
+  --form-padding: 1rem;         
+  --gap: 2rem;
+  --padding: 2rem;
+  --body-bg: #f7f7f7;
+  --form-border:0.4; 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
 body {
-    background-color: rgb(106, 106, 106);
-    font-family: Arial, sans-serif;
-  }
+ width: 100%;
+ height: auto;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--font-size);
+  background-color: var(--body-bg);
+  color: #333;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: var(--main-color);
+  color: var(--text-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  gap: 1rem;
+}
+
+.nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: var(--font-size);
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: var(--accent-color);
+}
+
+main {
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--padding);
+  display: block;
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr 1fr;
+  padding: var(--padding);
+}
+.image {
+  width: 100%;
+  height: 100%;
+}
+.image img {
+  width: auto;
+  height: auto;
+  max-width: none;
+  display: flex;
+}          
+
+
+.form {
+  width: 100%;
+  max-width: 500px;
+  margin: 2rem auto 0 auto;
+  padding: 1.5rem;
+  border: 0.5px solidrgb(80, 98, 200)c;
+  font-size: var(--form-font-size);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: var(--body-bg, #f7f7f7);
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+form {
+  width: 100%;
+}
+
+input[type="text"] {
+  background-color: transparent;
+  color: #000;
+  border: none;
+  border-bottom: 1px solid #000;
+  font-size: var(--form-font-size);
+  padding: 0.6rem 0;
+  width: 100%;
+  outline: none;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+select,
+textarea,
+.submit-btn,
+.file-upload,
+.email-label,
+.at-symbol,
+.inquiry-options label {
+  background-color: #fff;
+  color: #000000;
+  border: 0.1px solid #000000;
+  font-size: var(--form-font-size);
+  padding: 0.3rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.email-label {
+  display: block;
+  color: #000;
+  margin-bottom: 0.1rem;
+  font-size: var(--form-font-size);
+}
+
+.email-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.email-row input[type="text"] {
+  background-color: transparent;
+  color: #000000;
+  border: none;
+  border-bottom: 1px solid #000;
+  padding: 0.5rem 0;
+  outline: none;
+  font-size: var(--form-font-size);
+  flex: 1;
+}
+
+.manual-domain {
+  flex: 1;
+}
+
+.domain-select {
+  background-color: #fff;
+  color: #575252;
+  border: 1px solid #575757;
+  padding: 0.3rem;
+  font-size: var(--form-font-size);
+  height: 2rem;
+}
+  
+.at-symbol {
+  font-size: var(--form-font-size)
+  color: #000;
+}
+
+textarea {
+  resize: vertical;
+  width: 100%;
+}
+
+
+.file-upload {
+  font-size: 0.6rem;
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 1rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  border: none;
+  text-align: left;
+}
+
+
+.submit-btn {
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+
+.submit-btn:hover,
+.file-upload:hover,
+.inquiry-options input[type="radio"]:checked + label {
+  background-color: #000;
+  color: #fff;
+}
+
+
+.inquiry-options {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.inquiry-options input[type="radio"] {
+  display: none;
+}
+
+.inquiry-options label {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--main-color);
+  color: var(--text-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+}
